@@ -18,7 +18,7 @@
 # limitations under the License.
 
 actions :install, :remove
-default_action :install
+default_action :install if defined?(default_action) # Chef > 10.8
 
 attribute :user,       :kind_of => String,          :default => nil
 attribute :group,      :kind_of => String,          :default => nil
